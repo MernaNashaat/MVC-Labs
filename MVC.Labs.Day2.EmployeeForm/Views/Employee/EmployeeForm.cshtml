@@ -1,0 +1,50 @@
+﻿@model Employee
+@{
+    ViewBag.Title = "Thanks";
+}
+
+@section Styles
+{
+
+    <style>
+        /*.text-danger {
+            border: 1px solid red;
+        }
+
+        .input-validation-error {
+            border: 1px solid red;
+        }*/
+    </style>
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+
+            <label for="name"> Name :</label>
+            @Html.TextBoxFor(e => e.Name, new { @class = "form-control" })
+            @Html.ValidationMessageFor(e => e.Name, null, new { @class = "text-danger" })
+            <br />
+            Email : @Html.TextBoxFor(e => e.Email, new { @class = "form-control" })
+            @Html.ValidationMessageFor(e => e.Email, null, new { @class = "text-danger" })
+
+            <br />
+            Salary : @Html.TextBoxFor(e => e.Salary, new { @class = "form-control" })
+            @Html.ValidationMessageFor(e => e.Salary, null, new { @class = "text-danger" })
+
+            <br />
+            Address : @Html.TextAreaFor(e => e.Address, new { @class = "form-control" })
+            @Html.ValidationMessageFor(e => e.Address, null, new { @class = "text-danger" })
+
+            <br />
+            gender:@Html.DropDownList("Gender", new SelectList(Enum.GetValues(typeof(Gender))), "Select Gender", new { @class = "form-control" })
+            @Html.ValidationMessageFor(e => e.gender, null, new { @class = "text-danger" })
+
+
+            <br />
+            <input type="submit" value="Submit" class="btn btn-primary" />
+        </form>
+
+
+    </div>
+</div>

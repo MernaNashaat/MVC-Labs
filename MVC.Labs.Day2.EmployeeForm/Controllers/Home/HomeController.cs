@@ -11,27 +11,11 @@ namespace MVC.Labs.Day2.EmployeeForm.Controllers.Home
 {
     public class HomeController : Controller
     {
-                 
-        EmployeeManager em= new EmployeeManager();
-        public ViewResult EmployeeForm()
+        public ActionResult Index()
         {
             return View();
         }
-        [HttpPost]
-        public ViewResult EmployeeForm(Employee employee)
-        {
-            if(ModelState.IsValid)
-            {
-               
-             var result=em.Add(employee);
-            return View("ThanksForm",employee);
 
-            }
-            return View();
-        }
-        public ViewResult ThanksForm()
-        {
-            return View(new Employee());
-        }
+
     }
 }

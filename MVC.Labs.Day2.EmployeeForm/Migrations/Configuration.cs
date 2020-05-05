@@ -9,7 +9,7 @@ namespace MVC.Labs.Day2.EmployeeForm.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(MVC.Labs.Day2.EmployeeForm.Model.ModelContext context)

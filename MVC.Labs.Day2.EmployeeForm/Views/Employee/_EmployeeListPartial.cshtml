@@ -1,0 +1,12 @@
+﻿
+@model Employee
+<tr>
+    <th scope="row">@Model.Id</th>
+    <td>@Model.Name</td>
+    <td>@Model.Address</td>
+    <td>@Model.Email</td>
+    <td>@Model.Salary</td>
+    <td>@Model.gender</td>
+    <td> @Html.Partial("_TableButtonsPartial",Model.Id)</td>
+
+</tr>

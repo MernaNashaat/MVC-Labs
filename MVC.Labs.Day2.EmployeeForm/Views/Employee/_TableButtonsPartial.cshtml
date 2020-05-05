@@ -1,0 +1,20 @@
+﻿@model int?
+
+
+    <div class="btn-group" role="group" aria-label="Basic example">
+
+        @*<a href="@Url.Action("EmployeeDetails",new { id = Model }) " class="btn btn-primary btn-sm">
+            <i class="far fa-eye"></i>
+        </a>
+
+        <a href="@Url.Action("EditEmployee",new { id = Model }) " class="btn btn-primary btn-sm">
+            <i class="far fa-edit"></i>
+        </a>
+        <a href="@Url.Action("DeleteEmployee",new { id = Model }) " class="btn btn-primary btn-sm">
+           Delete
+        </a>*@
+        @Html.ActionLink("Details", "EmployeeDetails", new { id = Model }, new { @class = "btn btn-primary" })
+        @Html.ActionLink("Edit", "EditEmployee", new { id = Model }, new { @class = "btn btn-success" })
+        @Html.ActionLink("Delete", "DeleteEmployee", new { id = Model }, new { @class = "btn btn-danger" })
+    
+    </div>

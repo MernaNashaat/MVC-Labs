@@ -2,6 +2,7 @@
 using MVC.Labs.Day2.EmployeeForm.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
@@ -9,11 +10,36 @@ namespace MVC.Labs.Day2.EmployeeForm.Managers
 {
     public class EmployeeManager
     {
+
         ModelContext ctx = new ModelContext();
-        public virtual Employee Add(Employee entity)
+        public virtual IQueryable<Employee> GetAll()
+         {
+            return ctx.Employees;
+        }
+        public virtual Employee GetById(int Id)
         {
-            ctx.Employees.Add(entity);
-            return ctx.SaveChanges() > 0 ? entity : null;
+            Employee emp = ctx.Employees.Find(Id);
+            return emp!=null ? emp : null;
+
+        }
+
+        public virtual Employee Add(Employee emp)
+        {
+            ctx.Employees.Add(emp);
+            return ctx.SaveChanges() > 0 ? emp : null;
+        }
+        public virtual Employee Delete(Employee  emp)
+        {
+            ctx.Employees.Remove(emp);
+            return ctx.SaveChanges() > 0 ? emp : null;
+        }
+
+        public virtual Employee Update(Employee emp)
+        {
+            ctx.Employees.Attach(emp);
+            ctx.Entry(emp).State = EntityState.Modified;
+            return ctx.SaveChanges() > 0 ? emp : null;
+
         }
     }
 }
