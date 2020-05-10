@@ -153,6 +153,13 @@
     <Content Include="Scripts\jquery-3.5.0.min.js" />
     <Content Include="Scripts\jquery-3.5.0.slim.js" />
     <Content Include="Scripts\jquery-3.5.0.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />
@@ -238,11 +245,16 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Managers\EmployeeManager.cs" />
-    <Compile Include="Migrations\202005041307361_initial.cs" />
-    <Compile Include="Migrations\202005041307361_initial.Designer.cs">
-      <DependentUpon>202005041307361_initial.cs</DependentUpon>
+    <Compile Include="Migrations\202005091900362_createDBtoLocal.cs" />
+    <Compile Include="Migrations\202005091900362_createDBtoLocal.Designer.cs">
+      <DependentUpon>202005091900362_createDBtoLocal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005091904509_addDepartment.cs" />
+    <Compile Include="Migrations\202005091904509_addDepartment.Designer.cs">
+      <DependentUpon>202005091904509_addDepartment.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Department.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Model\ModelContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -284,12 +296,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202005041307361_initial.resx">
-      <DependentUpon>202005041307361_initial.cs</DependentUpon>
-    </EmbeddedResource>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="Scripts\index.d.ts" />
+    <EmbeddedResource Include="Migrations\202005091900362_createDBtoLocal.resx">
+      <DependentUpon>202005091900362_createDBtoLocal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005091904509_addDepartment.resx">
+      <DependentUpon>202005091904509_addDepartment.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -15,6 +15,8 @@
         </a>*@
         @Html.ActionLink("Details", "EmployeeDetails", new { id = Model }, new { @class = "btn btn-primary" })
         @Html.ActionLink("Edit", "EditEmployee", new { id = Model }, new { @class = "btn btn-success" })
-        @Html.ActionLink("Delete", "DeleteEmployee", new { id = Model }, new { @class = "btn btn-danger" })
-    
+        @*@Html.ActionLink("Delete", "DeleteEmployee", new { id = Model }, new { @class = "btn btn-danger" })*@
+          <button class="btn btn-danger" onclick="confirmDelete(@Model)">
+              Delete
+          </button>
     </div>

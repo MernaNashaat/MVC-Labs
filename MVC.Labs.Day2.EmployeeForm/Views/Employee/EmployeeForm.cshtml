@@ -1,6 +1,6 @@
 ﻿@model Employee
 @{
-    ViewBag.Title = "Thanks";
+    ViewBag.Title =ViewBag.Action +"Employee";
 }
 
 @section Styles
@@ -9,42 +9,69 @@
     <style>
         /*.text-danger {
             border: 1px solid red;
-        }
+        }*/
 
         .input-validation-error {
-            border: 1px solid red;
-        }*/
+            border: 1px solid #dc3545;
+        }
     </style>
 }
+<br />
+
+<h2>
+    @ViewBag.Action Employee
+</h2>
+<br />
 
 <div class="row">
     <div class="col-md-4">
-        <form method="post">
+        @using (Html.BeginForm())
+        {
+            if (ViewBag.Action == "Edit")
+            {
+                @Html.HiddenFor(e => e.Id)
 
+            }
             <label for="name"> Name :</label>
             @Html.TextBoxFor(e => e.Name, new { @class = "form-control" })
             @Html.ValidationMessageFor(e => e.Name, null, new { @class = "text-danger" })
             <br />
-            Email : @Html.TextBoxFor(e => e.Email, new { @class = "form-control" })
+            <label for="name"> Email :</label>
+
+            @Html.TextBoxFor(e => e.Email, new { @class = "form-control" })
             @Html.ValidationMessageFor(e => e.Email, null, new { @class = "text-danger" })
 
             <br />
-            Salary : @Html.TextBoxFor(e => e.Salary, new { @class = "form-control" })
+            <label for="name"> Salary :</label>
+
+            @Html.TextBoxFor(e => e.Salary, new { @class = "form-control" })
             @Html.ValidationMessageFor(e => e.Salary, null, new { @class = "text-danger" })
 
             <br />
-            Address : @Html.TextAreaFor(e => e.Address, new { @class = "form-control" })
+            <label for="name"> Address :</label>
+
+            @Html.TextAreaFor(e => e.Address, new { @class = "form-control" })
             @Html.ValidationMessageFor(e => e.Address, null, new { @class = "text-danger" })
 
             <br />
-            gender:@Html.DropDownList("Gender", new SelectList(Enum.GetValues(typeof(Gender))), "Select Gender", new { @class = "form-control" })
+            <label for="name"> Gender :</label>
+
+            @Html.DropDownList("Gender", new SelectList(Enum.GetValues(typeof(Gender))), "Select Gender", new { @class = "form-control" })
             @Html.ValidationMessageFor(e => e.gender, null, new { @class = "text-danger" })
 
 
             <br />
-            <input type="submit" value="Submit" class="btn btn-primary" />
-        </form>
+            <input type="submit" value=" @ViewBag.Action" class="btn btn-primary" />
+            @Html.ActionLink("Back to list", "EmployeesList", null, new { @class = "btn btn-primary" })
+
+        }
+
 
 
     </div>
 </div>
+@section Scripts
+{
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+}

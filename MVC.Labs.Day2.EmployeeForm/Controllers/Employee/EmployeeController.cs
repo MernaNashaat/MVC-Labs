@@ -16,19 +16,23 @@ namespace MVC.Labs.Day2.EmployeeForm.Controllers
         EmployeeManager em = new EmployeeManager();
         public ViewResult EmployeeForm()
         {
+            ViewBag.Action = "Add";
             return View();
         }
         [HttpPost]
-        public ViewResult EmployeeForm(Employee employee)
+        public ActionResult EmployeeForm(Employee employee)
         {
             if (ModelState.IsValid)
             {
 
                 var result = em.Add(employee);
-                return View("ThanksForm", employee);
+                TempData["message"] = "Employee added successfully";
+                return RedirectToAction(nameof(EmployeesList));
+
 
             }
-            return View();
+            ViewBag.Action = "Add";
+            return View("EmployeeForm");
         }
         public ViewResult ThanksForm()
         {
@@ -39,25 +43,61 @@ namespace MVC.Labs.Day2.EmployeeForm.Controllers
         {
             return View("EmployeesList", em.GetAll().ToList());
         }
-        public ViewResult EmployeeDetails(int id)
+        public ActionResult EmployeeDetails(int id)
         {
             Employee emp = em.GetById(id);
+            if(emp!=null)
+            {
             return View("EmployeeDetails", emp);
+
+            }
+            return HttpNotFound("User Not Found");
         }
-        public ViewResult DeleteEmployee(int id)
+        [HttpPost]
+        public ActionResult DeleteEmployee(int id)
         {
             Employee emp = ctx.Employees.Find(id);
-            em.Delete(emp);
-            return View("EmployeesList", em.GetAll().ToList());
+            if(emp!=null)
+            {
+                ctx.Employees.Remove(emp);
+                ctx.SaveChanges();
+
+                //em.Delete(emp );
+                //return View("EmployeesList", em.GetAll().ToList());
+                return Json(true);
+
+                //return RedirectToAction(nameof(EmployeesList));
+
+            }
+            return HttpNotFound("Employee not found");
+            
 
         }
-        public ViewResult EditEmployee(int id)
+        public ActionResult EditEmployee(int id)
         {
             Employee emp = ctx.Employees.Find(id);
-            emp.Name = "merna";
-            Employee newEmp=em.Update(emp);
-            return View("EmployeeForm",newEmp );
+            if(emp!=null)
+            {
+                ViewBag.Action = "Edit";
+                return View("EmployeeForm", emp);
+            }
+            return HttpNotFound("Employee not found");
         }
+        [HttpPost]
+        public ActionResult EditEmployee(Employee emp)
+        {
+            if(ModelState.IsValid)
+            {
+                em.Update(emp);
+                TempData["message"] = "Employee Edited successfully";
+                return RedirectToAction(nameof(EmployeesList));
+                //return View("EmployeesList", em.GetAll().ToList());
+
+            }
+            ViewBag.Action = "Edit";
+            return View("EmployeeForm",emp);
+        }
+
 
 
     }

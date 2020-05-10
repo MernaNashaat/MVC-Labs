@@ -70,8 +70,6 @@ C:\Users\Merna Nashaat\source\repos\MVC.Labs.Day2\MVC.Labs.Day2.EmployeeForm\bin
 C:\Users\Merna Nashaat\source\repos\MVC.Labs.Day2\MVC.Labs.Day2.EmployeeForm\bin\System.Web.Mvc.xml
 C:\Users\Merna Nashaat\source\repos\MVC.Labs.Day2\MVC.Labs.Day2.EmployeeForm\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\Merna Nashaat\source\repos\MVC.Labs.Day2\MVC.Labs.Day2.EmployeeForm\obj\Debug\MVC.EmployeeForm.csprojAssemblyReference.cache
-C:\Users\Merna Nashaat\source\repos\MVC.Labs.Day2\MVC.Labs.Day2.EmployeeForm\obj\Debug\MVC.Labs.Day2.EmployeeForm.Migrations.initial.resources
-C:\Users\Merna Nashaat\source\repos\MVC.Labs.Day2\MVC.Labs.Day2.EmployeeForm\obj\Debug\MVC.EmployeeForm.csproj.GenerateResource.cache
 C:\Users\Merna Nashaat\source\repos\MVC.Labs.Day2\MVC.Labs.Day2.EmployeeForm\obj\Debug\MVC.EmployeeForm.csproj.CoreCompileInputs.cache
 C:\Users\Merna Nashaat\source\repos\MVC.Labs.Day2\MVC.Labs.Day2.EmployeeForm\obj\Debug\MVC.EmployeeForm.csproj.CopyComplete
 C:\Users\Merna Nashaat\source\repos\MVC.Labs.Day2\MVC.Labs.Day2.EmployeeForm\obj\Debug\MVC.Labs.Day2.EmployeeForm.dll
@@ -80,3 +78,6 @@ C:\Users\Merna Nashaat\source\repos\MVC.Labs.Day2\MVC.Labs.Day2.EmployeeForm\bin
 C:\Users\Merna Nashaat\source\repos\MVC.Labs.Day2\MVC.Labs.Day2.EmployeeForm\bin\System.Web.Optimization.dll
 C:\Users\Merna Nashaat\source\repos\MVC.Labs.Day2\MVC.Labs.Day2.EmployeeForm\bin\WebActivatorEx.dll
 C:\Users\Merna Nashaat\source\repos\MVC.Labs.Day2\MVC.Labs.Day2.EmployeeForm\bin\WebGrease.dll
+C:\Users\Merna Nashaat\source\repos\MVC.Labs.Day2\MVC.Labs.Day2.EmployeeForm\obj\Debug\MVC.Labs.Day2.EmployeeForm.Migrations.createDBtoLocal.resources
+C:\Users\Merna Nashaat\source\repos\MVC.Labs.Day2\MVC.Labs.Day2.EmployeeForm\obj\Debug\MVC.EmployeeForm.csproj.GenerateResource.cache
+C:\Users\Merna Nashaat\source\repos\MVC.Labs.Day2\MVC.Labs.Day2.EmployeeForm\obj\Debug\MVC.Labs.Day2.EmployeeForm.Migrations.addDepartment.resources

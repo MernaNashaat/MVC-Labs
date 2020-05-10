@@ -30,6 +30,8 @@ namespace MVC.Labs.Day2.EmployeeForm.Managers
         }
         public virtual Employee Delete(Employee  emp)
         {
+            //ctx.Entry(emp).State = EntityState.Deleted;
+
             ctx.Employees.Remove(emp);
             return ctx.SaveChanges() > 0 ? emp : null;
         }
