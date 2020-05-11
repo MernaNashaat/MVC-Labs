@@ -244,6 +244,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\Extentions.cs" />
     <Compile Include="Managers\EmployeeManager.cs" />
     <Compile Include="Migrations\202005091900362_createDBtoLocal.cs" />
     <Compile Include="Migrations\202005091900362_createDBtoLocal.Designer.cs">
@@ -258,6 +259,7 @@
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Model\ModelContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\EmployeeViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />

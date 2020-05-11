@@ -1,11 +1,11 @@
 ﻿
 @model Employee
 <tr id="@Model.Id">
-    <th scope="row">@Model.Id</th>
+    @*<th scope="row">@Model.Id</th>*@
     <td>@Model.Name</td>
     <td>@Model.Address</td>
-    <td>@Model.Email</td>
-    <td>@Model.Salary</td>
+    <td>@Html.DisplayFor(m=>m.Email)</td>
+    <td>@Html.DisplayFor(m=>m.Salary)</td>
     <td>@Model.gender</td>
     <td> @Html.Partial("_TableButtonsPartial",Model.Id)</td>
 

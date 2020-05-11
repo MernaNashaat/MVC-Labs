@@ -20,13 +20,17 @@ namespace MVC.Labs.Day2.EmployeeForm.Models
         [MaxLength(128)]
         public string Email { get; set; }
         [Range(2000,50000)]
+        [DataType(DataType.Currency)]
         public int Salary { get; set; }
         public Gender gender { get; set; }
         
         public int? FK_DeptId { get; set; }
         [ForeignKey("FK_DeptId")]
         public virtual Department department { get; set; }
-
+        public override string ToString()
+        {
+            return Name;
+        }
 
     }
     public enum Gender

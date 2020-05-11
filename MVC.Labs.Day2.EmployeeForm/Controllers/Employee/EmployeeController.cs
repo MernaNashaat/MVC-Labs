@@ -1,6 +1,7 @@
 ﻿using MVC.Labs.Day2.EmployeeForm.Managers;
 using MVC.Labs.Day2.EmployeeForm.Model;
 using MVC.Labs.Day2.EmployeeForm.Models;
+using MVC.Labs.Day2.EmployeeForm.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,6 +35,19 @@ namespace MVC.Labs.Day2.EmployeeForm.Controllers
             ViewBag.Action = "Add";
             return View("EmployeeForm");
         }
+        [HttpPost]
+        public ActionResult AddAjax(Employee employee)
+        {
+            if (ModelState.IsValid)
+            {
+
+                var result = em.Add(employee);
+                return PartialView("_EmployeeListPartial", employee);
+
+
+            }
+            return Json(ModelState);
+        }
         public ViewResult ThanksForm()
         {
             return View(new Employee());
@@ -41,7 +55,12 @@ namespace MVC.Labs.Day2.EmployeeForm.Controllers
 
         public ViewResult EmployeesList()
         {
-            return View("EmployeesList", em.GetAll().ToList());
+
+            EmployeeViewModel empVM = new EmployeeViewModel
+            {
+                employees= em.GetAll().ToList()
+            };
+            return View("EmployeesList", empVM);
         }
         public ActionResult EmployeeDetails(int id)
         {

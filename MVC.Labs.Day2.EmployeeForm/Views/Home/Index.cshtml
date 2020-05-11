@@ -4,4 +4,13 @@
 }
 
 <h1> Home Page</h1>
+<br />
+
+@{
+    string[] list = new string[5] { "a", "b", "c", "d", "e" };
+    MVC.Labs.Day2.EmployeeForm.Model.ModelContext ctx = new MVC.Labs.Day2.EmployeeForm.Model.ModelContext();
+    var users = ctx.Employees.ToList();
+
+}
+@Html.ULFor(users.ToArray())
 
